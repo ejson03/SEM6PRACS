@@ -23,7 +23,7 @@ def scolumnar(string, key):
     cipher = "" 
   
     keyIndex = 0
-    string.replace(" ", "_")
+    string = string.replace(" ", "_")
     plainTextLength = float(len(string)) 
     plainText = list(string) 
     keyList = sorted(list(key)) 
@@ -53,7 +53,7 @@ if __name__ == "__main__":
     key = generateKey(string, keyword) 
     vigenereCipher = vigenere(string,key) 
     print("After vigenere : ", vigenereCipher) 
-    sColumnarCipher = scolumnar(vigenereCipher,keyword) 
+    sColumnarCipher = scolumnar(string,keyword) 
     print("After single columnar : ", sColumnarCipher) 
 
 
