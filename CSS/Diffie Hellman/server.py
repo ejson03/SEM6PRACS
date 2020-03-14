@@ -9,8 +9,8 @@ UDPServerSocket = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
 UDPServerSocket.bind((localIP, localPort))
 print("UDP server up and listening")
 
-key_gen = dhkeygen.DH(23, 5)
-msgFromServer = str(key_gen.keygenStage1(4))
+key_gen = dhkeygen.DH(17, 7)
+msgFromServer = str(key_gen.keygenStage1(15))
 bytesToSend = str.encode(msgFromServer)
 
 #while (True):

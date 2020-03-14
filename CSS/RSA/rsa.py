@@ -3,7 +3,7 @@ import eea
 import random
 import prime
 
-def RSA_keygen(n=100):
+def RSA_keygen(n=10):
     
     p = prime.generate_primes(n=n, k=1)[0]
     q = prime.generate_primes(n=n, k=1)[0]
@@ -20,7 +20,7 @@ def RSA_keygen(n=100):
             if gcd == (s*phi_n + t*e):
                 d = t % phi_n
                 break
-    return (e, n, d, len(str(n).strip()))
+    return e, n, d
 
 if __name__ == '__main__':
     print(RSA_keygen())

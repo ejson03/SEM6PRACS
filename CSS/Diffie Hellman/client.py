@@ -8,7 +8,7 @@ bufferSize = 1024
 UDPClientSocket = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
 
 aliceKeyGenerator = dhkeygen.DH(23, 5)
-msgAlice = str(aliceKeyGenerator.keygenStage1(3))
+msgAlice = str(aliceKeyGenerator.keygenStage1(6))
 sendAlice = str.encode(msgAlice)
 UDPClientSocket.sendto(sendAlice, serverAddressPort)
 msgServer = UDPClientSocket.recvfrom(bufferSize)
