@@ -31,7 +31,7 @@ client_n = int(client_data['n'])
 
 pt = int(input("Enter message: "))
 h = hashlib.md5(str(pt).encode('utf-8'))
-pt_hash = int(h.hexdigest(), 16)
+pt_hash = int(h.hexdigest(), 16)[:len(str(n).split)]
 print(f"Hash generated is {pt_hash}")
 
 start = time.time()
@@ -45,5 +45,5 @@ keytime = time.time() - start
 print(f"It took {keytime} seconds to generate signature")
 
 data = json.dumps({'cipher':ct, 'signature':signature}).encode('utf-8')
-print(f"Cipher text and signature of plaintext {pt} is {ct},.......{signature}")
+print(f"Cipher text and signature of plaintext {pt} is {ct},{signature}")
 UDPServerSocket.sendto(data, client_address)

@@ -40,7 +40,7 @@ print(f"It took {keytime} seconds to generate the decrypted ")
 print(f"Decrypted text from server is {pt}")
 
 h = hashlib.md5(str(pt).encode('utf-8'))
-client_hash = int(h.hexdigest(), 16)
+client_hash = int(h.hexdigest(), 16)[:len(str(n).split)]
 print(f"Hash generated is {client_hash}")
 
 start = time.time()
