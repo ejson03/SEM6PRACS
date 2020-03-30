@@ -53,8 +53,18 @@ if __name__ == "__main__":
     key = generateKey(string, keyword) 
     vigenereCipher = vigenere(string,key) 
     print("After vigenere : ", vigenereCipher) 
-    sColumnarCipher = scolumnar(string,keyword) 
+    sColumnarCipher = scolumnar(vigenereCipher,keyword) 
     print("After single columnar : ", sColumnarCipher) 
+
+'''
+Enter plain text: i am studying css
+Enter keyword: css
+After vigenere :  WREARWHYHMMRURGGW
+plain text before appending: ['W', 'R', 'E', 'A', 'R', 'W', 'H', 'Y', 'H', 'M', 'M', 'R', 'U', 'R', 'G', 'G', 'W']
+plain text after appending: ['W', 'R', 'E', 'A', 'R', 'W', 'H', 'Y', 'H', 'M', 'M', 'R', 'U', 'R', 'G', 'G', 'W', '_']
+[['W', 'R', 'E'], ['A', 'R', 'W'], ['H', 'Y', 'H'], ['M', 'M', 'R'], ['U', 'R', 'G'], ['G', 'W', '_']]
+After single columnar :  WAHMUGRRYMRWRRYMRW
+'''
 
 
 
